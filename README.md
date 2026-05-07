@@ -1,73 +1,34 @@
-# Welcome to your Lovable project
+# Thai Drive Secure Hub
 
-## Project info
+**Thai Drive Secure Hub** is a modern, responsive administrative web application designed to streamline the processing, management, and approval of vehicle insurance applications. It provides a robust dashboard for managing customer applications, automating document parsing via Google Document AI, and securely handling insurance workflows.
 
-**URL**: https://lovable.dev/projects/9f2776ad-0f9a-4da4-be63-fefcaf7ec6c3
+## 🚀 Key Features
 
-## How can I edit this code?
+*   **Insurance Management Dashboard**: A centralized administrative panel to track and manage all user insurance applications with real-time KPI metrics.
+*   **Automated Document Parsing**: Integration with Google Document AI for highly accurate, automated data extraction from user-uploaded passports and vehicle grants.
+*   **Dynamic Pricing Tiers**: Supports flexible pricing models including Compulsory, Voluntary, and Voluntary Plus packages based on duration.
+*   **Application Lifecycle Workflow**: Seamlessly handles state transitions for applications (Pending -> Payment Verified -> Approved/Rejected -> Document Generation -> Completed).
+*   **Secure Payment Verification**: Restricts policy generation until payment confirmation is manually or systematically verified.
+*   **Beautiful UI/UX**: Built using modern design principles with Shadcn UI and Tailwind CSS for a premium, accessible, and responsive user experience.
 
-There are several ways of editing your application.
+## 🛠️ Technology Stack
 
-**Use Lovable**
+This project is built using a modern frontend ecosystem:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9f2776ad-0f9a-4da4-be63-fefcaf7ec6c3) and start prompting.
+*   **Framework**: [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+*   **UI Components**: [shadcn/ui](https://ui.shadcn.com/) (Radix UI)
+*   **State Management/Data Fetching**: [TanStack React Query](https://tanstack.com/query/latest)
+*   **Routing**: [React Router v6](https://reactrouter.com/)
+*   **Backend & Database**: [Firebase](https://firebase.google.com/) (Firestore)
+*   **AI Integration**: Google Cloud Document AI
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📦 Installation & Setup
 
-**Use your preferred IDE**
+To run this project locally, you will need [Node.js](https://nodejs.org/) installed on your machine.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9f2776ad-0f9a-4da4-be63-fefcaf7ec6c3) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/intis2ar-ux/thaidrivesecure-Website.git
+   cd thaidrivesecure-Website
