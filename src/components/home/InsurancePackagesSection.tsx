@@ -14,28 +14,28 @@ export function InsurancePackagesSection() {
       image: sedanImage,
       duration: language === "en" ? "9 Days" : "9 Hari",
       passengers: `5 ${t("packages.passengers")}`,
-      price: "RM 33",
+      price: "RM 35",
     },
     {
       type: "MPV",
       image: mpvImage,
       duration: language === "en" ? "9 Days" : "9 Hari",
       passengers: `7 ${t("packages.passengers")}`,
-      price: "RM 40",
+      price: "RM 50",
     },
     {
       type: "SUV/Truck",
       image: truckImage,
       duration: language === "en" ? "9 Days" : "9 Hari",
       passengers: `5 ${t("packages.passengers")}`,
-      price: "RM 40",
+      price: "RM 45",
     },
     {
       type: language === "en" ? "Motorcycle" : "Motorsikal",
       image: motorcycleImage,
-      duration: language === "en" ? "3 Months" : "3 Bulan",
+      duration: language === "en" ? "9 Days" : "9 Hari",
       passengers: `2 ${t("packages.passengers")}`,
-      price: "RM 65",
+      price: "RM 20",
     },
   ];
 
@@ -45,28 +45,59 @@ export function InsurancePackagesSection() {
       image: sedanImage,
       duration: language === "en" ? "9 Days" : "9 Hari",
       passengers: `5 ${t("packages.passengers")}`,
-      price: "RM 173",
+      price: "RM 60",
     },
     {
       type: "MPV",
       image: mpvImage,
       duration: language === "en" ? "9 Days" : "9 Hari",
       passengers: `7 ${t("packages.passengers")}`,
-      price: "RM 193",
+      price: "RM 85",
     },
     {
       type: "SUV/Truck",
       image: truckImage,
       duration: language === "en" ? "9 Days" : "9 Hari",
       passengers: `5 ${t("packages.passengers")}`,
-      price: "RM 213",
+      price: "RM 75",
     },
     {
       type: language === "en" ? "Motorcycle" : "Motorsikal",
       image: motorcycleImage,
-      duration: language === "en" ? "3 Months" : "3 Bulan",
+      duration: language === "en" ? "9 Days" : "9 Hari",
       passengers: `2 ${t("packages.passengers")}`,
-      price: "RM 260",
+      price: "RM 35",
+    },
+  ];
+
+  const voluntaryPlusPackages = [
+    {
+      type: "Sedan",
+      image: sedanImage,
+      duration: language === "en" ? "9 Days" : "9 Hari",
+      passengers: `5 ${t("packages.passengers")}`,
+      price: "RM 85",
+    },
+    {
+      type: "MPV",
+      image: mpvImage,
+      duration: language === "en" ? "9 Days" : "9 Hari",
+      passengers: `7 ${t("packages.passengers")}`,
+      price: "RM 110",
+    },
+    {
+      type: "SUV/Truck",
+      image: truckImage,
+      duration: language === "en" ? "9 Days" : "9 Hari",
+      passengers: `5 ${t("packages.passengers")}`,
+      price: "RM 100",
+    },
+    {
+      type: language === "en" ? "Motorcycle" : "Motorsikal",
+      image: motorcycleImage,
+      duration: language === "en" ? "9 Days" : "9 Hari",
+      passengers: `2 ${t("packages.passengers")}`,
+      price: "RM 50",
     },
   ];
 
@@ -136,7 +167,7 @@ export function InsurancePackagesSection() {
         </div>
 
         {/* Voluntary Insurance */}
-        <div>
+        <div className="mb-16">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               {t("packages.voluntary.title")}
@@ -149,6 +180,24 @@ export function InsurancePackagesSection() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {voluntaryPackages.map((pkg, index) => (
               <PackageCard key={`voluntary-${index}`} pkg={pkg} featured />
+            ))}
+          </div>
+        </div>
+
+        {/* Voluntary Plus Insurance */}
+        <div>
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+              {t("packages.voluntaryplus.title")}
+            </h2>
+            <p className="text-muted-foreground">
+              {t("packages.voluntaryplus.description")}
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {voluntaryPlusPackages.map((pkg, index) => (
+              <PackageCard key={`voluntaryplus-${index}`} pkg={pkg} featured />
             ))}
           </div>
         </div>

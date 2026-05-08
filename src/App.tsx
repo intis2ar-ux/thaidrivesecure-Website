@@ -24,7 +24,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/thaidrivesecure-Website/">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
