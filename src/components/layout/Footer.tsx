@@ -12,7 +12,6 @@ export function Footer() {
     { label: t("nav.documents"), href: "/documents" },
     { label: t("nav.borderguide"), href: "/border-guide" },
     { label: t("nav.about"), href: "/about" },
-    { label: t("nav.contact"), href: "/contact" },
   ];
 
   const serviceLinks = [

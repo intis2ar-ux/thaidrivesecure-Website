@@ -49,7 +49,6 @@ export function Navbar() {
     { label: t("nav.documents"), href: "/documents" },
     { label: t("nav.borderguide"), href: "/border-guide" },
     { label: t("nav.about"), href: "/about" },
-    { label: t("nav.contact"), href: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -153,18 +152,6 @@ export function Navbar() {
               )}
             >
               {t("nav.about")}
-            </Link>
-
-            <Link
-              to="/contact"
-              className={cn(
-                "px-3 py-1.5 rounded-md text-sm font-medium transition-colors whitespace-nowrap",
-                isActive("/contact")
-                  ? "bg-primary text-primary-foreground"
-                  : "text-foreground hover:bg-muted"
-              )}
-            >
-              {t("nav.contact")}
             </Link>
           </div>
 
