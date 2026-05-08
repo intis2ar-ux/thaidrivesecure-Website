@@ -18,37 +18,50 @@ export const InsuranceComparisonSection = () => {
       feature: t("compare.feature.legal"),
       compulsory: true,
       voluntary: true,
+      voluntaryPlus: true,
     },
     {
       feature: t("compare.feature.thirdparty"),
       compulsory: true,
       voluntary: true,
+      voluntaryPlus: true,
     },
     {
       feature: t("compare.feature.property"),
       compulsory: false,
       voluntary: true,
+      voluntaryPlus: true,
     },
     {
       feature: t("compare.feature.ownvehicle"),
       compulsory: false,
       voluntary: false,
+      voluntaryPlus: false,
       note: t("compare.note.comprehensive"),
     },
     {
       feature: t("compare.feature.highermedical"),
       compulsory: false,
       voluntary: true,
+      voluntaryPlus: true,
+    },
+    {
+      feature: t("compare.feature.maximum"),
+      compulsory: false,
+      voluntary: false,
+      voluntaryPlus: true,
     },
     {
       feature: t("compare.feature.duitpau"),
       compulsory: false,
       voluntary: true,
+      voluntaryPlus: true,
     },
     {
       feature: t("compare.feature.legal.liability"),
       compulsory: false,
       voluntary: true,
+      voluntaryPlus: true,
     },
   ];
 
@@ -67,17 +80,17 @@ export const InsuranceComparisonSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="card-elevated overflow-hidden">
             {/* Desktop Table */}
             <div className="hidden md:block overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
-                    <TableHead className="w-[40%] text-foreground font-semibold">
+                    <TableHead className="w-[30%] text-foreground font-semibold">
                       {t("compare.feature")}
                     </TableHead>
-                    <TableHead className="text-center">
+                    <TableHead className="text-center w-[23%]">
                       <div className="flex flex-col items-center gap-2">
                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                           <Shield className="w-5 h-5 text-primary" />
@@ -86,13 +99,22 @@ export const InsuranceComparisonSection = () => {
                         <span className="text-xs text-muted-foreground font-normal">{t("compare.compulsory.sub")}</span>
                       </div>
                     </TableHead>
-                    <TableHead className="text-center">
+                    <TableHead className="text-center w-[23%]">
                       <div className="flex flex-col items-center gap-2">
                         <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                           <ShieldPlus className="w-5 h-5 text-accent" />
                         </div>
                         <span className="font-semibold text-foreground">{t("compare.voluntary")}</span>
                         <span className="text-xs text-muted-foreground font-normal">{t("compare.voluntary.sub")}</span>
+                      </div>
+                    </TableHead>
+                    <TableHead className="text-center w-[23%]">
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
+                          <ShieldPlus className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                        </div>
+                        <span className="font-semibold text-foreground">{t("compare.voluntaryplus")}</span>
+                        <span className="text-xs text-muted-foreground font-normal">{t("compare.voluntaryplus.sub")}</span>
                       </div>
                     </TableHead>
                   </TableRow>
@@ -121,6 +143,17 @@ export const InsuranceComparisonSection = () => {
                       </TableCell>
                       <TableCell className="text-center">
                         {row.voluntary ? (
+                          <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30">
+                            <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
+                          </div>
+                        ) : (
+                          <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-red-100 dark:bg-red-900/30">
+                            <X className="w-5 h-5 text-red-500 dark:text-red-400" />
+                          </div>
+                        )}
+                      </TableCell>
+                      <TableCell className="text-center">
+                        {row.voluntaryPlus ? (
                           <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30">
                             <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
                           </div>
@@ -194,32 +227,69 @@ export const InsuranceComparisonSection = () => {
                   ))}
                 </ul>
               </div>
+
+              {/* Voluntary Plus Card */}
+              <div className="p-4 rounded-xl bg-purple-500/5 border border-purple-500/20">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center">
+                    <ShieldPlus className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t("compare.voluntaryplus")}</h3>
+                    <p className="text-xs text-muted-foreground">{t("compare.voluntaryplus.sub")}</p>
+                  </div>
+                </div>
+                <ul className="space-y-2">
+                  {comparisonData.map((row, index) => (
+                    <li key={index} className="flex items-center gap-2 text-sm">
+                      {row.voluntaryPlus ? (
+                        <Check className="w-4 h-4 text-green-600 shrink-0" />
+                      ) : (
+                        <X className="w-4 h-4 text-red-500 shrink-0" />
+                      )}
+                      <span className={row.voluntaryPlus ? "text-foreground" : "text-muted-foreground"}>
+                        {row.feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
           {/* Summary Cards */}
-          <div className="grid md:grid-cols-2 gap-6 mt-8">
-            <div className="card-elevated p-6 border-l-4 border-l-primary">
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            <div className="card-elevated p-6 border-l-4 border-l-primary flex flex-col">
               <h3 className="font-semibold text-foreground mb-2">{t("compare.compulsory")}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{t("compare.compulsory.summary")}</p>
+              <p className="text-sm text-muted-foreground mb-4 flex-grow">{t("compare.compulsory.summary")}</p>
               <Link
                 to="/services/compulsory"
-                className="text-primary font-medium text-sm hover:underline"
+                className="text-primary font-medium text-sm hover:underline mt-auto inline-block"
               >
                 {t("common.learnmore")} →
               </Link>
             </div>
-            <div className="card-elevated p-6 border-l-4 border-l-accent">
+            <div className="card-elevated p-6 border-l-4 border-l-accent flex flex-col">
               <div className="flex items-center gap-2 mb-2">
                 <h3 className="font-semibold text-foreground">{t("compare.voluntary")}</h3>
-                <span className="px-2 py-0.5 rounded-full bg-accent/20 text-accent text-xs font-semibold">
+                <span className="px-2 py-0.5 rounded-full bg-accent/20 text-accent text-xs font-semibold whitespace-nowrap">
                   {t("compare.recommended")}
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">{t("compare.voluntary.summary")}</p>
+              <p className="text-sm text-muted-foreground mb-4 flex-grow">{t("compare.voluntary.summary")}</p>
               <Link
                 to="/services/voluntary"
-                className="text-accent font-medium text-sm hover:underline"
+                className="text-accent font-medium text-sm hover:underline mt-auto inline-block"
+              >
+                {t("common.learnmore")} →
+              </Link>
+            </div>
+            <div className="card-elevated p-6 border-l-4 border-l-purple-500 flex flex-col">
+              <h3 className="font-semibold text-foreground mb-2">{t("compare.voluntaryplus")}</h3>
+              <p className="text-sm text-muted-foreground mb-4 flex-grow">{t("compare.voluntaryplus.summary")}</p>
+              <Link
+                to="/services/voluntary"
+                className="text-purple-600 dark:text-purple-400 font-medium text-sm hover:underline mt-auto inline-block"
               >
                 {t("common.learnmore")} →
               </Link>
