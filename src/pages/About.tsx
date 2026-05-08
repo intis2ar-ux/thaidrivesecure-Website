@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Shield, Target, Eye, Heart, Star, Users, Award, Download, MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
+import { Shield, Target, Eye, Heart, Star, Award, Download, MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { TikTokIcon } from "@/components/icons/TikTokIcon";
 
@@ -27,25 +27,6 @@ const About = () => {
       icon: Award,
       title: t("about.values.excellence"),
       description: t("about.values.excellence.desc"),
-    },
-  ];
-
-  const team = [
-    {
-      name: "Ahmad bin Hassan",
-      role: language === "en" ? "Founder & Director" : "Pengasas & Pengarah",
-    },
-    {
-      name: "Siti Aminah",
-      role: language === "en" ? "Operations Manager" : "Pengurus Operasi",
-    },
-    {
-      name: "Muhammad Rizal",
-      role: language === "en" ? "Customer Relations" : "Hubungan Pelanggan",
-    },
-    {
-      name: "Nurul Huda",
-      role: language === "en" ? "Insurance Specialist" : "Pakar Insurans",
     },
   ];
 
@@ -133,22 +114,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Team */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground text-center mb-4">{t("about.team.title")}</h2>
-              <p className="text-muted-foreground text-center mb-8">{t("about.team.description")}</p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {team.map((member) => (
-                  <div key={member.name} className="card-elevated p-6 text-center">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-10 h-10 text-primary" />
-                    </div>
-                    <h4 className="font-semibold text-foreground">{member.name}</h4>
-                    <p className="text-sm text-muted-foreground">{member.role}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
