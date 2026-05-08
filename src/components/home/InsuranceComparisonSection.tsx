@@ -32,13 +32,7 @@ export const InsuranceComparisonSection = () => {
       voluntary: true,
       voluntaryPlus: true,
     },
-    {
-      feature: t("compare.feature.ownvehicle"),
-      compulsory: false,
-      voluntary: false,
-      voluntaryPlus: false,
-      note: t("compare.note.comprehensive"),
-    },
+
     {
       feature: t("compare.feature.highermedical"),
       compulsory: false,
@@ -124,11 +118,6 @@ export const InsuranceComparisonSection = () => {
                     <TableRow key={index} className="hover:bg-muted/30 transition-colors">
                       <TableCell className="font-medium text-foreground">
                         {row.feature}
-                        {row.note && (
-                          <span className="block text-xs text-muted-foreground mt-1">
-                            {row.note}
-                          </span>
-                        )}
                       </TableCell>
                       <TableCell className="text-center">
                         {row.compulsory ? (
