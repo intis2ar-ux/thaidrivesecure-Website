@@ -1,6 +1,6 @@
 import { Smartphone, Download, Shield, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import tdsAppLogo from "@/assets/tds-app-logo.png";
+import mobileAppMockup from "@/assets/mob app mockup.png";
 
 export function AppDownloadSection() {
   const { t } = useLanguage();
@@ -24,12 +24,8 @@ export function AppDownloadSection() {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary via-primary to-primary-dark relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-      </div>
+    <section className="section-padding relative overflow-hidden bg-[linear-gradient(105deg,#1479b1_0%,#1395ac_52%,#16b8a5_100%)]">
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,24,44,0.72)_0%,rgba(5,24,44,0.42)_44%,rgba(5,24,44,0)_72%)]" />
 
       <div className="container-custom relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -79,34 +75,12 @@ export function AppDownloadSection() {
 
           {/* Phone Mockup */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Phone frame */}
-              <div className="w-64 h-[500px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] p-3 shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-sky-100 to-sky-200 rounded-[2.5rem] flex flex-col items-center justify-center p-6">
-                  {/* App icon */}
-                  <img 
-                    src={tdsAppLogo} 
-                    alt="ThaiDriveSecure" 
-                    className="w-24 h-24 mb-4"
-                  />
-                  <h3 className="text-primary font-bold text-lg mb-2">ThaiDriveSecure</h3>
-                  <p className="text-muted-foreground text-center text-sm mb-6">
-                    {t("app.tagline")}
-                  </p>
-                  {/* Mock buttons */}
-                  <div className="space-y-3 w-full">
-                    <div className="bg-primary text-primary-foreground py-3 rounded-lg text-center text-sm font-medium">
-                      {t("app.mock.buy")}
-                    </div>
-                    <div className="bg-accent text-accent-foreground py-3 rounded-lg text-center text-sm font-medium">
-                      {t("app.mock.policies")}
-                    </div>
-                    <div className="bg-white border border-border py-3 rounded-lg text-center text-sm font-medium text-foreground">
-                      {t("app.mock.documents")}
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative w-full max-w-[540px]">
+              <img
+                src={mobileAppMockup}
+                alt="ThaiDriveSecure mobile app screens"
+                className="w-full drop-shadow-2xl"
+              />
               {/* Floating badge */}
               <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground px-4 py-2 rounded-full font-bold text-sm shadow-lg animate-bounce">
                 {t("app.new")}
